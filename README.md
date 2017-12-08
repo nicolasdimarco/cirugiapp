@@ -20,7 +20,7 @@ Environment configuration
 
 4. instal python packages
 
-        pip install -r requirements/dev.txt
+        pip install -r requirements.txt
 
 5. Copy settings template
         
