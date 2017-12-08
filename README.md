@@ -1,38 +1,32 @@
 # cirugiapp
 
-Configuracion de entorno
+Environment configuration
 ------------------------
 
-1. instalar paquetes del sistema necesarios
+1. install necessary system packages
 
         sudo apt-get install python-dev
         
-2. instalar pip y virtualenv
+2. install pip and virtualenv
 
         wget https://bootstrap.pypa.io/get-pip.py
         sudo python get-pip.py
         sudo pip install virtualenv virtualenvwrapper
 
-3. crear y activar virtualenv
+3. create and activate virtualenv
 
         mkvirtualenv cirugiapp
         workon cirugiapp
 
-4. si mkvirtualenv no funciona entonces
+4. instal python packages
 
-        sudo pip install virtualenv
-        virtualenv env
-        . env/bin/activate
+        pip install -r requirements.txt
 
-5. instalar paquetes de python
-
-        pip install -r requirements/dev.txt
-
-6. Copiar template de settings
+5. Copy settings template
         
         cp cirugiapp/settings/dev.template.py cirugiapp/settings/dev.py
 
-7. Configurar y Crear BD
+6. Configure and create DB
         
         sudo apt-get install postgresql
         sudo -u postgres psql postgres
@@ -41,10 +35,10 @@ Configuracion de entorno
         sudo -u postgres createdb cirugiapp
         python manage.py migrate_schemas
 
-8. Crear un superusuario
+7. Create a superuser
         
         python manage.py createsuperuser
         
-9. Correr el server de prueba
+9. Run server
 
         python manage.py runserver
