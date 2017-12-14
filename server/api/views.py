@@ -22,7 +22,7 @@ def patient(request, pk):
         return Response(serializer.data)
 
     elif request.method == 'PUT':
-        serializer = PatientSerializer(snippet, data=request.data)
+        serializer = PatientSerializer(patient, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
